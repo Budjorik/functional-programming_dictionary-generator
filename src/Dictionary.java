@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 
 public class Dictionary {
 
-    public <T, R extends Comparable<? super R>> List<R> map(List<T> dictionary, List<T> words, Function<T, R> func) {
+    public <T, R extends Comparable<? super R>> List<R> createDictionary(
+            List<T> dictionary, List<T> words, Function<T, R> func) {
         List<R> result = new ArrayList<>();
         result = words.stream()
                 .map(value -> value.toString())
@@ -21,7 +22,7 @@ public class Dictionary {
         return result;
     }
 
-    public String createDictionary(String text) {
+    public String checkWord(String text) {
         return text.chars()
                 .filter(i -> Character.isLetterOrDigit(i))
                 .mapToObj(i -> String.valueOf((char) i))

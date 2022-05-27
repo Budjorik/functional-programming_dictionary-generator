@@ -21,7 +21,7 @@ public class Main {
 
         // Получаем список новых слов, отсутствующих в уже имеющемся словаре
         List<String> preDictionary = new ArrayList<>();
-        preDictionary = obj.map(dictionary, texts, obj::createDictionary);
+        preDictionary = obj.createDictionary(dictionary, texts, obj::checkWord);
         preDictionary.forEach(System.out::println);
 
     }
